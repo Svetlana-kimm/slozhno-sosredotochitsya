@@ -4,9 +4,41 @@
   переключая тему
 */
 
-.page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
+/* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+    чем стили в медиазапросе предпочтений пользователя */
+
+.page.theme_light {
+  background-image: url(../images/cover-image-light.png);
+}
+.theme_light {
+  --bg-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --title-color: #ffc2e6;
+  --rec-color: transparent;
+  --checkbox-color: #353430;
+  --hover-checkbox-color: #32312D66;
+  --corner-color: #353430;
+  --card-title-color: #353430;
+  --text-color: #353430;
+  --content-text-color: #353430;
+  --font-size: 18px;
+  --font-family: IBM Plex Mono;
+}
+
+@media (prefers-color-scheme: light) {
+:root {
+  --bg-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --title-color: #ffc2e6;
+  --rec-color: transparent;
+  --checkbox-color: #353430;
+  --hover-checkbox-color: #32312D66;
+  --corner-color: #353430;
+  --card-title-color: #353430;
+  --text-color: #353430;
+  --content-text-color: #353430;
+  --font-size: 18px;
+  --font-family: IBM Plex Mono;
+}
 }

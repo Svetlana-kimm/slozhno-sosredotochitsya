@@ -14,6 +14,7 @@
 
 .theme_dark {
   --bg-image: url(../images/cover-image-dark.png);
+  --bg-color: #00183f;
   --accent-color: #ff0070;
   --text-color: #000028;
   --title-color: #db00ff;

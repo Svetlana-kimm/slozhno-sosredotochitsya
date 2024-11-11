@@ -9,14 +9,16 @@
   */
 
 
-
-
-  
 .page.theme_dark {
   :root.theme-dark {
     --accent-color: #ff0070;
     --text-color: #000028;
     --title-color: #db00ff;
+    --rec-color: #ff0070;
+    --corner-color: #ff0070;
+    --checkbox-color: #ff0070;
+    --hover-checkbox-color: #FF007066;
+    --card-title-color:  #ff0070;
     --content-text-color:  #F1B2CE;
     --font-size: 18px;
     --font-family: IBM Plex Mono;

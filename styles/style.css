@@ -162,6 +162,12 @@
   margin-block-end: 20px;
 }
 
+.cards {
+  display: grid;
+  gap: 10px;
+  padding-block-end: 20px;
+}
+
 .card-title {
   font-size: var(--font-size);
   font-weight: 700;
@@ -200,12 +206,6 @@
 
 .card-title_no_bold {
   font-weight: 400;
-}
-
-.cards {
-  display: grid;
-  gap: 10px;
-  padding-block-end: 20px;
 }
 
 .methods_description {

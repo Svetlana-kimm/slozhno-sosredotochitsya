@@ -2,7 +2,7 @@
 
 .page {
   inline-size: 375px;
-  background-image: url(../images/cover-image-dark.png);
+  background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

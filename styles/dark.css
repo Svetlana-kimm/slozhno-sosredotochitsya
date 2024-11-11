@@ -3,24 +3,26 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
- /* сохраните этот селектор в приведённом виде.
+/* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
 
-
 .page.theme_dark {
-  :root.theme-dark {
-    --accent-color: #ff0070;
-    --text-color: #000028;
-    --title-color: #db00ff;
-    --rec-color: #ff0070;
-    --corner-color: #ff0070;
-    --checkbox-color: #ff0070;
-    --hover-checkbox-color: #FF007066;
-    --card-title-color:  #ff0070;
-    --content-text-color:  #F1B2CE;
-    --font-size: 18px;
-    --font-family: IBM Plex Mono;
-  }
+  background-image: var(--bg-image);
+}
+
+.theme_dark {
+  --bg-image: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --text-color: #000028;
+  --title-color: #db00ff;
+  --rec-color: #ff0070;
+  --corner-color: #ff0070;
+  --checkbox-color: #ff0070;
+  --hover-checkbox-color: #ff007066;
+  --card-title-color: #ff0070;
+  --content-text-color: #f1b2ce;
+  --font-size: 18px;
+  --font-family: IBM Plex Mono;
 }

@@ -4,6 +4,12 @@
 
 */
 
+
+
+.page.theme_dark {
+  background-image: var(--bg-image);
+}
+
 :root {
   --bg-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;

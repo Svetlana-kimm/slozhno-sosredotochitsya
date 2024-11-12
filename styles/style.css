@@ -8,7 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
@@ -77,16 +77,14 @@
   display: grid;
   justify-self: end;
   align-self: center;
-  block-size: 98px;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   text-wrap: nowrap;
-  gap: 10px;
+  gap: 15px;
   list-style-type: none;
-  min-inline-size: 70px;
   align-items: center;
   justify-content: space-around;
 }
@@ -99,11 +97,14 @@
   font-weight: 400;
   font-size: var(--font-size);
   line-height: 100%;
+  padding: 1.5px 13px;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--checkbox-color);
   outline-offset: 1px;
+  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
@@ -117,7 +118,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  inset-block-end: 1px solid var(--checkbox-color);
+  border-block-end: 1px solid var(--checkbox-color);
 }
 
 /* стили титула и блока ниже */
@@ -129,6 +130,7 @@
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  align-self: start;
 }
 
 .heder_description {
@@ -149,8 +151,14 @@
 /* стили блоков по всему сайту */
 
 .main {
+  max-inline-size: 1024px;
+  min-inline-size: 375px;
   padding-inline: 10px;
   margin-block-start: 40px;
+}
+
+.section-content {
+  margin-block-end: 50px;
 }
 
 .main_title-decor {
@@ -159,14 +167,10 @@
   line-height: 130%;
   text-align: left;
   color: var(--card-title-color);
-  margin-block-start: 30px;
-  margin-block-end: 20px;
 }
 
 .cards {
-  display: grid;
-  gap: 10px;
-  padding-block-end: 20px;
+  margin-block-start: 20px;
 }
 
 .card-title {
@@ -176,6 +180,7 @@
   text-align: left;
   color: var(--text-color);
   background-color: var(--accent-color);
+  margin-block-end: 10px;
 }
 
 .card-content {
@@ -192,7 +197,7 @@
 }
 
 .word-link:hover {
-  border-block-end: 1px solid var(--checkbox-color);
+  border-block-end: 1px solid var(--content-text-color);
 }
 
 .word-link:focus {
@@ -210,14 +215,13 @@
 }
 
 .methods_description {
-  margin-block-end: 20px;
+  margin-block-start: 20px;
 }
 
 /* стили для блока с картинками */
 
 .pictures_title {
   margin-block-end: 10px;
-  margin-block-start: 30px;
   block-size: fit-content;
 }
 
@@ -245,76 +249,48 @@
 }
 
 .footer_title {
+  align-self: center;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 /* медиазапросы */
 
-@media (min-width: 768px) or (orientation: landscape) {
+@media (min-width: 500px) {
   .page {
     inline-size: 768px;
   }
 
   .header {
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr min-content 1fr;
     padding: 20px;
-    block-size: 100vh;
     min-block-size: 1024px;
   }
 
   .decor_item {
-    position: absolute;
-    min-inline-size: 52px;
     inset-block-start: 20px;
-    inset-inline-end: 29px;
+    inset-inline-end: 48px;
   }
 
   .decorated-zone::before {
-    content: "";
-    position: absolute;
     inset-inline-end: 20px;
     inset-block-start: 20px;
   }
 
   .decorated-zone::after {
-    content: "";
-    position: absolute;
     inset-inline-start: 20px;
     inset-block-end: 20px;
-  }
-
-  /* стили переключателя тем */
-
-  .header__theme-menu {
-    display: grid;
-    justify-self: end;
-    align-self: center;
-    block-size: 98px;
-  }
-
-  .header__theme-menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .header__theme-menu-button {
-    padding-inline: 13px;
-    padding-block: 1.5px;
   }
 
   /* стили титула и блока ниже */
 
   .title-decor {
-    margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
+  .header_title {
+    margin-inline-start: -20px;
+  }
+
   .heder_description {
-    justify-self: end;
-    align-self: center;
     max-inline-size: 50%;
   }
 
@@ -328,39 +304,26 @@
   .main_title-decor {
     max-inline-size: 236px;
     text-wrap: wrap;
-    margin-block-start: 60px;
   }
 
-  .cards {
+  .section-content {
     display: grid;
-    gap: 10px;
-    padding: 0;
-    margin-block-end: 20px;
+    margin-block-end: 80px;
   }
 
-  .methods,
-  .reasons {
-    display: grid;
+  .reasons,
+  .methods {
     grid-template-columns: 1fr 2fr;
-    column-gap: 20px;
-    align-items: start;
+    gap: 20px;
   }
 
-  .methods_card,
-  .reasons_card {
-    grid-column: 2;
-    min-inline-size: 472px;
+  .points {
+    grid-template-columns: 1fr;
   }
 
-  .reasons_title {
-    margin: 0;
-    padding: 0;
-  }
-
-  .methods_description {
-    margin-block-start: 60px;
-    margin-block-end: 20px;
-    min-block-size: 23px;
+  .methods_description,
+  .reasons_card-multitasking {
+    margin-block-start: 0;
   }
 
   /* стили для блока с картинками */
@@ -368,13 +331,11 @@
   .pictures_title {
     margin-block-end: 20px;
     margin-block-start: 60px;
-    block-size: fit-content;
   }
 
   .pictures_card {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     margin-block-end: 60px;
   }
@@ -414,188 +375,59 @@
   /* стили для подвала */
 
   .footer {
-    position: relative;
-    display: grid;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
-    block-size: 100vh;
     min-block-size: 1024px;
-  }
-
-  .footer_title {
-    text-shadow: 2px 2px 0 var(--accent-color);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
   .page {
     inline-size: 1024px;
   }
 
   .header {
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr min-content 1fr;
-    padding: 20px;
-    block-size: 100vh;
     min-block-size: 768px;
-  }
-
-  .decorated-zone::before {
-    content: "";
-    position: absolute;
-    inset-inline-end: 20px;
-    inset-block-start: 20px;
-  }
-
-  .decorated-zone::after {
-    content: "";
-    position: absolute;
-    inset-inline-start: 20px;
-    inset-block-end: 20px;
   }
 
   .header__theme-menu {
     display: grid;
     justify-self: center;
     align-self: start;
-    block-size: 26px;
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
-    gap: 10px;
-    list-style-type: none;
-  }
-
-  /* стили титула и блока ниже */
-
-  .title-decor {
-    margin-inline-start: -20px;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .heder_description {
-    justify-self: end;
-    align-self: center;
-    max-inline-size: 50%;
   }
 
   /* стили блоков по всему сайту */
-  .main {
-    padding-inline: 20px;
-  }
-
-  .cards {
-    display: grid;
-    gap: 10px;
-  }
-
-  .methods,
-  .reasons {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 20px;
-    align-items: start;
-  }
-
-  .methods_card,
-  .reasons_card {
-    grid-column-start: 2;
-    min-inline-size: 649px;
-  }
-
-  .points {
-    display: grid;
-    column-gap: 20px;
-  }
-
-  .points_card {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-inline-size: 315px;
-  }
-
-  .card-content {
-    align-self: start;
-  }
-
-  .points_title {
-    grid-column: 1/4;
-  }
 
   .main_title-decor {
     max-inline-size: 315px;
-    text-wrap: wrap;
   }
 
-  .reasons_title {
-    margin: 0;
-    padding: 0;
+  .reasons,
+  .methods {
+    gap: 10px;
   }
 
-  .methods_description {
-    margin-block-end: 20px;
+  .points-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .points_card {
+    flex-grow: 1;
   }
   /* стили для блока с картинками */
 
   .pictures_card {
-    display: grid;
-    flex-grow: 1;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-    margin-block-end: 60px;
-  }
-
-  .card_item {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .pictures_card-sunset {
-    grid-column: 1/3;
-    grid-row: 1/2;
-  }
-
-  .pictures_card-icecream {
-    grid-column: 3/4;
-    grid-row: 1/3;
-  }
-
-  .pictures_card-music {
-    grid-column: 1/2;
-    grid-row: 2/4;
-  }
-
-  .pictures_card-books {
-    grid-column: 2/3;
-    grid-row: 2/3;
-  }
-
-  .pictures_card-street {
-    grid-column: 2/4;
-    grid-row: 3/4;
   }
 
   /* стили для подвала */
 
   .footer {
-    position: relative;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    block-size: 100vh;
     min-block-size: 768px;
-  }
-
-  .footer_title {
-    text-shadow: 2px 2px 0 var(--accent-color);
   }
 }

@@ -6,10 +6,6 @@
 
 
 
-.page.theme_dark {
-  background-image: var(--bg-image);
-}
-
 :root {
   --bg-image: url(../images/cover-image-dark.png);
   --bg-color: #00183f;
@@ -23,5 +19,5 @@
   --card-title-color:  #ff0070;
   --content-text-color:  #F1B2CE;
   --font-size: 18px;
-  --font-family: IBM Plex Mono;
+  --font-family: "IBM Plex Mono";
 }

@@ -25,7 +25,7 @@
   --text-color: #353430;
   --content-text-color: #353430;
   --font-size: 18px;
-  --font-family: IBM Plex Mono;
+  --font-family: "IBM Plex Mono";
 }
 
 @media (prefers-color-scheme: light) {
@@ -45,6 +45,6 @@
     --text-color: #353430;
     --content-text-color: #353430;
     --font-size: 18px;
-    --font-family: IBM Plex Mono;
-  }
+    --font-family: "IBM Plex Mono";
+}
 }

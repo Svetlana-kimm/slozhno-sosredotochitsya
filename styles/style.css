@@ -1,7 +1,8 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  inline-size: 375px;
+  min-inline-size: 375px;
+  max-inline-size: 1024px;
   background-image: var(--bg-image);
   background-color: var(--bg-color);
   background-size: cover;
@@ -9,6 +10,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: var(--font-family), monospace;
+
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
@@ -83,7 +85,7 @@
   display: flex;
   flex-direction: column;
   text-wrap: nowrap;
-  gap: 15px;
+  gap: 14.5px;
   list-style-type: none;
   align-items: center;
   justify-content: space-around;
@@ -97,7 +99,7 @@
   font-weight: 400;
   font-size: var(--font-size);
   line-height: 100%;
-  padding: 1.5px 13px;
+  padding-inline: 13.5px;
   cursor: pointer;
 }
 
@@ -180,7 +182,6 @@
   text-align: left;
   color: var(--text-color);
   background-color: var(--accent-color);
-  margin-block-end: 10px;
 }
 
 .card-content {
@@ -189,6 +190,7 @@
   line-height: 130%;
   text-align: left;
   color: var(--content-text-color);
+  margin-block-start: 10px;
 }
 
 .word-link {
@@ -256,10 +258,6 @@
 /* медиазапросы */
 
 @media (min-width: 500px) {
-  .page {
-    inline-size: 768px;
-  }
-
   .header {
     padding: 20px;
     min-block-size: 1024px;
@@ -381,10 +379,6 @@
 }
 
 @media (min-width: 800px) {
-  .page {
-    inline-size: 1024px;
-  }
-
   .header {
     min-block-size: 768px;
   }
@@ -397,6 +391,12 @@
 
   .header__theme-menu-list {
     flex-direction: row;
+    gap: 10px;
+  }
+
+  .header__theme-menu-button {
+    line-height: 128%;
+    padding-inline: 13px;
   }
 
   /* стили блоков по всему сайту */
